@@ -6,4 +6,4 @@
 - Detecting the OS
 - Removing everything on the system
 - Stopping critical services
-- Shredding networking configs
+- Shredding network configs
