@@ -1,5 +1,5 @@
 ### About
-- Oreo Ransomware is a linux-based python ransomware made to destroy and corrupt a linux-based system and with self-destruct capabilities.
+- Oreo Ransomware is a linux-based python ransomware made to destroy and corrupt a linux-based system.
 
 ### Features:
 - GUI
@@ -8,4 +8,3 @@
 - Stopping critical services
 - Shredding networking configs
 - Fork Bomb
-- Self-Destruct capabilities
