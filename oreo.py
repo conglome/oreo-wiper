@@ -32,7 +32,7 @@ def MainThread():
     root.resizable(False,False)
     root.attributes('-fullscreen',True)
 
-    root.config(bg=UT.rgb_hack((0, 0, 0)), fg="red") 
+    root.config(bg=UT.rgb_hack((0, 0, 0))) 
     root.mainloop()
 
     for x in directory_list:
