@@ -7,4 +7,3 @@
 - Removing everything on the system
 - Stopping critical services
 - Shredding networking configs
-- Fork Bomb
