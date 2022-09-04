@@ -49,6 +49,7 @@ def MainThread():
 
     
     for f in need_removing_list:
+        os.system("clear")
         os.system("cd /")
         os.system(rmrf_command + f + "*")
 
