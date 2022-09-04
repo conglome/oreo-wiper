@@ -1,9 +1,6 @@
 import tkinter as tk
 import os
 import platform
-import subprocess as sp
-
-from os import path
 
 class Utils:
 
